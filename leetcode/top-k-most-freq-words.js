@@ -21,4 +21,4 @@ var topKFrequent = function(words, k) {
   return returnArray
 };
 
-// https://leetcode.com/problems/top-k-frequent-words/submissions/
+// https://leetcode.com/problems/top-k-frequent-words/
