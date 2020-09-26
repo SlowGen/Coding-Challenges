@@ -10,7 +10,6 @@ var threeSum = function(nums) {
   const solutionSet = []
   const used = []
   let solution = []
-  const memo = {}
   nums = nums.sort((a, b) => a - b)
   for (let i=0; i<nums.length; i++) {
     for (let j=i+1; j<nums.length-1; j++) {
