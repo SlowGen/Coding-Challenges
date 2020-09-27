@@ -27,4 +27,25 @@ var threeSum = function(nums) {
   return solutionSet
 };
 
+//second solution using memoization, still not efficient enough.
+//I think I need to get rid of the iterations somehow and memo that too
+
+var threeSum = function(nums) {
+  let solution = []
+  const memo = {}
+  if (nums.length < 3) return []
+  for (let i=0; i<nums.length; i++) {
+    for (let j=i+1; j<nums.length-1; j++) {
+      let needed = (nums[i] + nums[j]) * -1
+      if ((nums.lastIndexOf(needed) > i) && (nums.lastIndexOf(needed) > j)) {
+        solution = [nums[i], nums[j], needed].sort((a, b) => a - b)
+      }
+      if ((!memo[solution]) && (solution.length > 0)) memo[solution] = solution
+    }
+  }
+  if (Object.values(memo)[0])
+  return Object.values(memo)
+    else return []
+};
+
 // https://leetcode.com/problems/3sum/
