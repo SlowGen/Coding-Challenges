@@ -3,16 +3,6 @@ var romanToInt = function(s) {
     const sArray = s.split('')
     let last;
     let current;
-    function doMinus (last, current) {
-        if (current === 'I' && last === 'V') return -1 * 2
-        if (current === 'I' && last === 'X') return -1 * 2
-        if (current === 'X' && last === 'L') return -10 * 2
-        if (current === 'X' && last === 'C') return -10 * 2
-        if (current === 'C' && last === 'D') return -100 * 2
-        if (current === 'C' && last === 'M') return -100 * 2
-        return 0
-    }
-    
     
     while (sArray.length) {
         current = sArray.pop()
@@ -47,3 +37,13 @@ var romanToInt = function(s) {
     }
     return amount
 };
+
+function doMinus (last, current) {
+    if (current === 'I' && last === 'V') return -1 * 2
+    if (current === 'I' && last === 'X') return -1 * 2
+    if (current === 'X' && last === 'L') return -10 * 2
+    if (current === 'X' && last === 'C') return -10 * 2
+    if (current === 'C' && last === 'D') return -100 * 2
+    if (current === 'C' && last === 'M') return -100 * 2
+    return 0
+}
