@@ -1,7 +1,9 @@
 var maxDepth = function(s) {
-    //make a stack and iterate through matching parenth
-    //count pairs for each set, keep track of max pairs
-    //return max count
+    //since the prompt clarifies that valid parentheses pairs are always input, we can assume that every opener
+    //has a closer. Using this assumption, we simply need to calculate the max openers still open at every point
+    //and discontinue counting them once they have closed
+
+
     let max = 0;
     let current = 0;
     
