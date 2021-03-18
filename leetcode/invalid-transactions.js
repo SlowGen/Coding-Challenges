@@ -1,5 +1,5 @@
 /**
- An invalid transaction is > $1000, or takes place in different cities withing (and including) 60 minutes
+ An invalid transaction is > $1000, or takes place in different cities within (and including) 60 minutes
  Return list of invalids in any order
  */
  var invalidTransactions = function(transactions) {
