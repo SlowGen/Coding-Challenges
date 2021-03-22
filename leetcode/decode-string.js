@@ -28,7 +28,7 @@ that digits are only for those repeat numbers, k. For example, there won't be in
             
             let kChar = ''; 
             
-            while (Number.isInteger(Number.parseInt(stack[stack.length -1], 10)) && stack.length) {
+            while (Number.isInteger(Number.parseInt(stack[stack.length -1], 10))) {
                 kChar = stack.pop() + kChar     //takes out numbers to get k
             }
             
