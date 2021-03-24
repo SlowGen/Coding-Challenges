@@ -16,8 +16,7 @@
     
     for (let int of intervals) {
         if (!currInt.length) {
-            currInt.push(int[0])
-            currInt.push(int[1])
+            currInt = [int[0], int[1]]
         } 
         if (int[0] <= currInt[1]) {
             int[0] <= currInt[0] ? currInt[0] = int[0] : null;
