@@ -15,9 +15,7 @@
     let currInt = [];
     
     for (let int of intervals) {
-        if (!currInt.length) {
-            currInt = [int[0], int[1]]
-        } 
+        if (!currInt.length) currInt = [int[0], int[1]];
         if (int[0] <= currInt[1]) {
             int[0] <= currInt[0] ? currInt[0] = int[0] : null;
             int[1] >= currInt[1] ? currInt[1] = int[1] : null;
