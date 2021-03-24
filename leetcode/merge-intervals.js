@@ -21,7 +21,7 @@
         } 
         if (int[0] <= currInt[1]) {
             int[0] <= currInt[0] ? currInt[0] = int[0] : null;
-            int[1]>= currInt[1] ? currInt[1] = int[1] : null;
+            int[1] >= currInt[1] ? currInt[1] = int[1] : null;
         } else {
             merged.push(currInt);
             currInt = [int[0], int[1]]
