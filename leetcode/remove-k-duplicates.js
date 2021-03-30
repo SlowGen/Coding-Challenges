@@ -34,4 +34,33 @@
     return s
 };
 
+//shorter code, slightly longer runtime on leetcode,
+//but same O(n)
+
+function removeKduplicates(s, k) {
+    let hasChanges = true;
+
+    while (hasChanges) {
+        hasChanges = false;
+        let updatedString = '';
+        let run = ''
+        for (const letter of s) {
+            if (run === '') run += letter
+            else if (run[0] === letter) run += letter
+            else {
+                updatedString += run
+                run = letter
+            }
+            if (run.length === k) {
+                run = '';
+                hasChanges = true;
+            }
+        }
+        s = updatedString + run
+    }
+    return s
+}
+
+
+
 //https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string-ii/
