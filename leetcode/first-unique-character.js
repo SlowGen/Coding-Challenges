@@ -25,4 +25,23 @@ var firstUniqChar = function(s) {
     
 };
 
+//and a two map solution (faster)
+
+const firstUniqChar2Maps = function(s) {
+    const unique = new Set()
+    const indexes = new Map()
+
+    for (let i=0; i<s.length; i++) {
+        if (indexes.has(s[i])) unique.delete(s[i])
+        else {
+            unique.add(s[i])
+            indexes.set(s[i], i)
+        }
+    }
+
+    if (unique.size > 0) return indexes.get(unique.keys().next().value)
+    return -1
+}
+
+
 //https://leetcode.com/problems/first-unique-character-in-a-string/
