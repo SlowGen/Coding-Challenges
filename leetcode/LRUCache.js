@@ -24,15 +24,9 @@ LRUCache.prototype.get = function(key) {
 };
 
 LRUCache.prototype.put = function(key, value) {
-    if (this.cache.has(key)) {
-        this.cache.delete(key)                //delete to preserve access order
-        this.cache.set(key, value)            //reset with new value
-    } else {
-        this.cache.set(key, value)           //for some reason (?) must add first, then check size and delete
-        let currentSize = this.cache.size
-        if (currentSize > this.cap) this.cache.delete(this.cache.keys().next().value)
-    }
-    
+    if (this.cache.has(key)) this.cache.delete(key)                //delete to preserve access order
+    else if (this.cap === this.cache.size) this.cache.delete(this.cache.keys().next().value) //check capacity
+    this.cache.set(key, value) 
 };
 
 //https://leetcode.com/problems/lru-cache/
